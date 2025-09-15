@@ -66,9 +66,7 @@ walmart-forecasting/
 
 ├── data/
 
-│ └── walmart_sales.csv # dataset (add your own, not committed)
-
-└── models/ # trained model + metadata (auto-generated)
+│ └── walmart_sales.csv # dataset 
 
 ├── rf_pipeline.pkl
 
@@ -126,19 +124,19 @@ Click New App → Select repo & app.py → Deploy 🚀
 
 🔧 Future Enhancements
 
-Hyperparameter tuning (Optuna/RandomSearch)
+* Hyperparameter tuning (Optuna/RandomSearch)
 
-Time-series cross-validation
+* Time-series cross-validation
 
-Residual analysis per store/department
+* Deep learning models (LSTM, GRU, TFT)
 
-Deep learning models (LSTM, GRU, TFT)
-
-Cloud deployment with CI/CD & monitoring
+* Cloud deployment with CI/CD & monitoring
 
 
 👩‍💻 Author
 
 Your Name — Shyamily Haridas
+
 📌 Streamlit - 
+
 💻 GitHub - 
