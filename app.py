@@ -52,7 +52,7 @@ st.sidebar.header("Input Parameters")
 store = st.sidebar.number_input("Store ID", min_value=1, step=1, value=int(meta.get("stores_default", 1)))
 dept = st.sidebar.number_input("Department ID", min_value=1, step=1, value=int(meta.get("depts_default", 1)))
 date = st.sidebar.date_input("Week Ending Date", value=datetime.today())
-Isholiday = st.sidebar.checkbox("Holiday Week?", value=False)
+is_holiday = st.sidebar.checkbox("Holiday Week?", value=False)
 
 temperature = st.sidebar.number_input("Temperature", value=60.0, format="%.2f")
 fuel_price = st.sidebar.number_input("Fuel Price", value=3.5, format="%.2f")
@@ -78,7 +78,7 @@ dayofweek = int(pd.to_datetime(date).dayofweek)
 input_row = {
     "store": int(store),
     "dept": int(dept),
-    "IsHoliday": int(Isholiday),
+    "IsHoliday": int(is_holiday),
     "temperature": float(temperature),
     "fuel_price": float(fuel_price),
     "markdown1": float(markdown1),
@@ -117,4 +117,5 @@ if st.sidebar.button("Predict Sales"):
         st.error("⚠️ Prediction failed. Possible feature mismatch.")
         st.text(str(e))
         st.write("Input columns:", X_input.columns.tolist())
+
 
