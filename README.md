@@ -56,16 +56,27 @@ The best-performing model (**Random Forest Regressor**) achieved **R² ~ 0.99** 
 
 walmart-forecasting/
 ├── app.py # Streamlit app
+
 ├── requirements.txt # dependencies
+
 ├── README.md # project documentation
+
 ├── .gitignore
+
 ├── src/
+
 │ └── train_save_model.py # training script to save pipeline
+
 ├── data/
+
 │ └── walmart_sales.csv # dataset (add your own, not committed)
+
 └── models/ # trained model + metadata (auto-generated)
+
 ├── rf_pipeline.pkl
+
 ├── feature_stats.json
+
 └── meta.json
 
 ---
