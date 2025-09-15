@@ -52,9 +52,9 @@ st.sidebar.header("Input Parameters")
 store = st.sidebar.number_input("Store ID", min_value=1, step=1, value=int(meta.get("stores_default", 1)))
 dept = st.sidebar.number_input("Department ID", min_value=1, step=1, value=int(meta.get("depts_default", 1)))
 date = st.sidebar.date_input("Week Ending Date", value=datetime.today())
-is_holiday = st.sidebar.checkbox("Holiday Week?", value=False)
+Isholiday = st.sidebar.checkbox("Holiday Week?", value=False)
 
-temp = st.sidebar.number_input("Temperature", value=60.0, format="%.2f")
+temperature = st.sidebar.number_input("Temperature", value=60.0, format="%.2f")
 fuel_price = st.sidebar.number_input("Fuel Price", value=3.5, format="%.2f")
 cpi = st.sidebar.number_input("CPI", value=250.0, format="%.2f")
 unemployment = st.sidebar.number_input("Unemployment Rate", value=6.0, format="%.2f")
@@ -65,7 +65,7 @@ markdown3 = st.sidebar.number_input("Markdown3", value=0.0, format="%.2f")
 markdown4 = st.sidebar.number_input("Markdown4", value=0.0, format="%.2f")
 markdown5 = st.sidebar.number_input("Markdown5", value=0.0, format="%.2f")
 
-store_type = st.sidebar.selectbox("Store Type", options=meta.get("types", ["A", "B", "C"]))
+type = st.sidebar.selectbox("Store Type", options=meta.get("types", ["A", "B", "C"]))
 size = st.sidebar.number_input("Store Size", value=float(meta.get("size_median", 100000)), format="%.0f")
 
 # --------------------------------------------------------
@@ -78,8 +78,8 @@ dayofweek = int(pd.to_datetime(date).dayofweek)
 input_row = {
     "store": int(store),
     "dept": int(dept),
-    "IsHoliday": int(is_holiday),
-    "temperature": float(temp),
+    "IsHoliday": int(Isholiday),
+    "temperature": float(temperature),
     "fuel_price": float(fuel_price),
     "markdown1": float(markdown1),
     "markdown2": float(markdown2),
@@ -88,7 +88,7 @@ input_row = {
     "markdown5": float(markdown5),
     "cpi": float(cpi),
     "unemployment": float(unemployment),
-    "type": str(store_type),
+    "type": str(type),
     "size": float(size),
     "week": int(week),
     "dayofweek": int(dayofweek),
@@ -117,3 +117,4 @@ if st.sidebar.button("Predict Sales"):
         st.error("⚠️ Prediction failed. Possible feature mismatch.")
         st.text(str(e))
         st.write("Input columns:", X_input.columns.tolist())
+
